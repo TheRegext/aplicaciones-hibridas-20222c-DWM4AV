@@ -1,4 +1,4 @@
-import ProductosService from '../services/productos.service.js'
+import * as ProductosService from '../services/productos.services.js'
 
 function verTodos(req, res) {
     ProductosService.traerProductos()

@@ -1,0 +1,15 @@
+{
+  "name": "mi-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongo.js",
+  "type": "module",
+  "scripts": {
+    "mongo": "cls && node mongo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.9.1"
+  }
+}
