@@ -1,0 +1,13 @@
+<%- include('../Layout/Header',{ title: "Agregar producto"}) %>
+
+    <h1>Nuevo Producto</h1>
+    <form action="/productos/nuevo" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="name" id="nombre">
+        <label for="precio">Precio</label>
+        <input type="number" name="price" id="precio">
+
+        <button type="submit">Guardar</button>
+    </form>
+
+<%- include('../Layout/Footer') %>
