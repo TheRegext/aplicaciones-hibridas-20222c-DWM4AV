@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Producto | Mi Web</title>
+</head>
+
+<body>
+    <h1>Modificar Producto</h1>
+    <form action="/productos/<%= producto._id %>/editar" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="nombre">Nombre:
+            <input type="text" name="name" id="nombre" value="<%= producto.name %>">
+        </label>
+        <label for="precio">Precio:
+            <input type="number" name="price" id="precio" value="<%= producto.price %>">
+        </label>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+
+</html>
