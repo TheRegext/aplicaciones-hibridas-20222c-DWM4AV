@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6329b37ecad06f6d8649577e"
+  },
+  "name": "Café Expreso",
+  "price": 242
+},{
+  "_id": {
+    "$oid": "6329b37ecad06f6d8649577f"
+  },
+  "name": "Café Americano",
+  "price": 302
+},{
+  "_id": {
+    "$oid": "6329b37ecad06f6d86495780"
+  },
+  "name": "Café Cortado",
+  "price": 242
+},{
+  "_id": {
+    "$oid": "6329bbf9d8a5a7fa132e6ff7"
+  },
+  "name": "Cafe Jarrito",
+  "price": "250"
+}]

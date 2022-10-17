@@ -1,0 +1,12 @@
+<%- include('../Layout/Header',{ title: categoria?._id ? 'Modificar categoria': 'Nueva categoria'}) %>
+
+<h1><%- categoria?._id ? 'Modificar categoria': 'Nueva categoria'%></h1>
+
+<form action="<%- categoria?._id ? `/categorias/${categoria?._id}/editar`: '/categorias/nuevo' %>" method="POST">
+    <label for="name">Nombre
+        <input type="text" name="name" id="name" value="<%= categoria.name%>">
+    </label>
+    <button type="submit">Guardar</button>
+</form>
+
+<%- include('../Layout/Footer') %>
