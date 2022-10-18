@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "63208a5270b88567a49e1e91"
+  },
+  "name": "Brian Lara"
+},{
+  "_id": {
+    "$oid": "63208a8470b88567a49e1e92"
+  },
+  "name": "Julieta",
+  "age": 20
+},{
+  "_id": {
+    "$oid": "63208aab70b88567a49e1e93"
+  },
+  "edad": 40
+},{
+  "_id": {
+    "$oid": "63288ba00634301f8851ba92"
+  },
+  "name": "Marianela"
+},{
+  "_id": {
+    "$oid": "63288ba90634301f8851ba93"
+  },
+  "name": "Pilar"
+},{
+  "_id": {
+    "$oid": "63288bb50634301f8851ba94"
+  },
+  "name": "Gonzalez"
+}]
