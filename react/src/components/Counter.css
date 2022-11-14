@@ -1,0 +1,17 @@
+.Counter {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/*
+borde negro fondo oscuro
+*/
+.Counter button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
