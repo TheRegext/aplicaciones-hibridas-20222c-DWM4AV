@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Border from './Border';
 import './Counter.css';
 
+// la funcion es el render del componente
 function Counter(props) {
     const [count, setCount] = useState(0);
 
@@ -16,6 +17,8 @@ function Counter(props) {
             setCount(count - 1)
         }
     }
+
+    console.log('render Counter')
 
     return (
         <Border>

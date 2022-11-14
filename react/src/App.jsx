@@ -1,4 +1,5 @@
 import Counter from './components/Counter';
+import ProductsList from './components/Products/ProductsList';
 
 // componente funcional
 
@@ -8,8 +9,7 @@ function App() {
   return (
     <div className="App">
       <Counter max={5} min={-5} />
-      <Counter max={5} min={0}/>
-      <Counter max={0} min={-5}/>
+      <ProductsList />
     </div>
   )
 }
