@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import * as ProductService from '../../services/products.services'
 
 
@@ -48,7 +49,7 @@ function ProductsList() {
                 {products.map((producto, index) => {
                     return (
                         <li>
-                            {producto.name} - $ {producto.price}
+                            {producto.name} - $ {producto.price} <Link to={`/products/${producto._id}`}>Ver</Link>
                         </li>
                     )
                 })}
