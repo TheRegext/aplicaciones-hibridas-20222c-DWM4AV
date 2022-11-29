@@ -1,6 +1,7 @@
 import * as productosService from '../../services/productos.services.js'
 import * as ReviewsService from '../../services/reviews.services.js'
 
+
 function findAll(req, res) {
     const filter = {}
 
@@ -15,13 +16,8 @@ function findAll(req, res) {
 }
 
 function create(req, res) {
-    const producto = {
-        name: req.body.name,
-        price: req.body.price,
-        category: req.body.category
-    }
 
-    productosService.guardarProducto(producto)
+    productosService.guardarProducto(req.body)
         .then(function (productoNuevo) {
             res.status(201).json(productoNuevo)
         })
@@ -85,13 +81,8 @@ function editById(req, res) {
 
 function replaceById(req, res) {
     const id = req.params.id
-    const producto = {
-        name: req.body.name,
-        price: req.body.price,
-        category: req.body.category
-    }
 
-    productosService.editarProducto(id, producto)
+    productosService.editarProducto(id, req.body)
         .then(function () {
             return productosService.traerProductoByID(id)
         })

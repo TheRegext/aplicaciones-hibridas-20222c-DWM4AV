@@ -1,5 +1,19 @@
+import jwt from 'jsonwebtoken'
+
 import * as usersService from '../../services/users.services.js'
 import * as productsService from '../../services/productos.services.js'
+import * as tokenService from '../../services/tokens.services.js'
+
+
+function find(req, res) {
+    const filter = {}
+
+
+    usersService.find(filter)
+        .then(function (users) {
+            res.status(200).json(users)
+        })
+}
 
 function findById(req, res) {
     const id = req.params.id
@@ -8,6 +22,70 @@ function findById(req, res) {
             res.status(200).json(user)
         })
 }
+
+function create(req, res) {
+    const user = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+    }
+
+    usersService.create(user)
+        .then(function (user) {
+            res.status(201).json(user)
+        })
+        .catch(function (err) {
+            res.status(400).json({ message: err.message })
+        })
+}
+
+
+function deleteById(req, res) {
+    const id = req.params.id
+    usersService.deleteById(id)
+        .then(function () {
+            res.status(204).end()
+        })
+}
+
+
+function login(req, res) {
+    const user = {
+        email: req.body.email,
+        password: req.body.password,
+    }
+
+    usersService.login(user)
+        .then(function (user) {
+            const token = jwt.sign({ id: user._id, rol: 'admin' }, 'CLAVE_SECRETA')
+
+            tokenService.create({ token: token, user_id: user._id })
+                .then(function () {
+                    res.status(200).json({ token, user })
+                })
+                .catch(function (err) {
+                    res.status(500).json({ message: 'Error al guardar el token' })
+                })
+
+        })
+        .catch(function (err) {
+
+            res.status(400).json({ message: err.message })
+        })
+}
+
+function logout(req, res) {
+    const token = req.headers['autn-token']
+
+    tokenService.deleteByToken(token)
+        .then(function () {
+            res.status(200).json({ message: 'Sesion cerrada' })
+        })
+
+
+}
+
+
 
 function findFavProducts(req, res) {
     const id = req.params.id
@@ -47,7 +125,12 @@ async function deleteFavProduct(req, res) {
 }
 
 export {
+    find,
+    create,
     findById,
+    deleteById,
+    login,
+    logout,
     findFavProducts,
     addFavProduct,
     deleteFavProduct
